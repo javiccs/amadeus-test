@@ -7,8 +7,8 @@ import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'passagers',
-    loadChildren: '../app/passagers/passagers.module#PassengersModule'
+    path: 'passengers',
+    loadChildren: '../app/passengers/passengers.module#PassengersModule'
   }
 ];
 
