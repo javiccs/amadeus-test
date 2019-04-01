@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Passenger } from "./passenger.model";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Passenger } from './passenger.model';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class PassengerService {
-  private PassengerURL = "http://localhost:3000/passengers";
+  private PassengerURL = 'http://localhost:3000/passengers';
 
   constructor(private http: HttpClient) {}
 

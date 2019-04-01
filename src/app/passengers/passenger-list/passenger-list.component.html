@@ -1,3 +1,22 @@
-<p>
-  passenger-list works!
-</p>
+<h3>Passengers</h3>
+<table class='table table-hover'>
+  <thead>
+  <tr class='table-primary'>
+    <th scope='col'>FirstName</th>
+    <th scope='col'>LastName</th>
+    <th scope='col'>Birthday</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <tr *ngFor='let passenger of passengers$ | async'>
+    <td>{{passenger.firstName}}</td>
+    <td>{{passenger.lastName}}</td>
+    <td>{{passenger.birthday}}</td>
+    <th>
+      <a (click)=deletePassenger(passenger)>delete</a>
+    </th>
+  </tr>
+  </tbody>
+</table>
