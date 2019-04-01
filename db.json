@@ -1,0 +1,25 @@
+{
+  "passengers": [
+    {
+      "firstName": "a",
+      "lastName": "a",
+      "birthday": "2019-02-27",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "HOLA",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "anoHOLAther comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "HOLA"
+  }
+}
