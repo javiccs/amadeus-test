@@ -9,6 +9,10 @@ const appRoutes: Routes = [
   {
     path: 'passengers',
     loadChildren: '../app/passengers/passengers.module#PassengersModule'
+  },
+  {
+    path: 'flights',
+    loadChildren: '../app/flights/flights.module#FlightsModule'
   }
 ];
 
