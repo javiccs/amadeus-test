@@ -6,9 +6,13 @@ import { AppComponent } from './app.component';
 import {StoreModule} from '@ngrx/store';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {PassengersModule} from './passengers/passengers.module';
+import {FlightsModule} from './flights/flights.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PassengersModule,
+    FlightsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

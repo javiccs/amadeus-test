@@ -17,6 +17,7 @@ const passengerRoutes: Routes = [{path: '', component: PassengerComponent}];
   imports: [CommonModule, RouterModule.forChild(passengerRoutes),
     StoreModule.forFeature('passengers', passengerReducer), EffectsModule.forFeature([PassengerEffects]), ReactiveFormsModule,
     FormsModule],
+  exports: [PassengerComponent, PassengerAddComponent, PassengerListComponent]
 })
 export class PassengersModule {
 }

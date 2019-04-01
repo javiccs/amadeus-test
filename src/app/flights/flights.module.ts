@@ -17,6 +17,7 @@ const flightRoutes: Routes = [{path: '', component: FlightComponent}];
   imports: [CommonModule, RouterModule.forChild(flightRoutes),
     StoreModule.forFeature('flights', flightReducer), EffectsModule.forFeature([FlightEffects]), ReactiveFormsModule,
     FormsModule],
+  exports: [FlightComponent, FlightAddComponent, FlightListComponent]
 })
 export class FlightsModule {
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import * as passengerActions from '../state/passenger.actions';
@@ -12,8 +12,8 @@ import { Passenger } from '../passenger.model';
 })
 export class PassengerAddComponent implements OnInit {
   passengerForm: FormGroup;
-  registerForm: FormGroup;
   submitted = false;
+  @Output() childData = new EventEmitter<Passenger>()
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<fromPassenger.AppState>
@@ -46,7 +46,7 @@ export class PassengerAddComponent implements OnInit {
     };
 
     this.store.dispatch(new passengerActions.CreatePassenger(newPassenger));
-
+    this.childData.emit(newPassenger)
     this.passengerForm.reset();
   }
 }
