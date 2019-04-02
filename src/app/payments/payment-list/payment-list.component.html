@@ -11,10 +11,9 @@
   <tbody>
   <tr>
   <tr *ngFor='let payment of payments$ | async'>
-    <td>{{payment.origin}}</td>
-    <td>{{payment.destination}}</td>
-    <td>{{payment.departureDate}}</td>
-    <td>$ {{payment.price}}</td>
+    <td>{{payment.cardHolder}}</td>
+    <td>{{payment.cardNumber|toString| slice:12:16}}</td>
+    <td>{{payment.expDate}}</td>
     <th>
       <a (click)=deletePayment(payment)>delete</a>
     </th>

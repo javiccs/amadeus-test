@@ -14,7 +14,7 @@ import { Flight } from '../flight.model';
 })
 export class FlightListComponent implements OnInit {
   flights$: Observable<Flight[]>;
-  @Output() getFlightsChild = new EventEmitter<any>()
+  @Output() getFlightsChild = new EventEmitter<any>();
 
   constructor(private store: Store<fromFlight.AppState>) {}
 
@@ -27,8 +27,7 @@ export class FlightListComponent implements OnInit {
   }
 
   deleteFlight(flight: Flight) {
-    console.log(flight)
-    if (confirm('Are You Sure You want to Delete the User?')) {
+    if (confirm('Are you sure you want to delete this flight?')) {
       this.store.dispatch(new flightActions.DeleteFlight(flight.id));
     }
   }
