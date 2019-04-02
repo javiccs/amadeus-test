@@ -1,0 +1,16 @@
+.card{
+  border: none;
+}
+.card-order {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.wrapper{
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.jumbotron{
+  background-color: transparent;
+}
+
+.title{
+  font-weight: 600;
+}

@@ -1,4 +1,111 @@
-<div class="container">
-  <app-passenger-add (childData)="test($event)"></app-passenger-add>
-  <app-flight-add></app-flight-add>
+
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-12">
+      <div class="card wrapper">
+        <div class="jumbotron vertical-center" *ngIf="init">
+        <div class="card-body" >
+          <h3 class="card-title">Welcome to Amadeus system</h3>
+          <p class="card-text">
+            You can start the sale of a ticket by pressing continue or navigate through the menu to manage each module.
+          </p>
+          <a href="#" class="btn btn-primary" (click)="continue()">Continue</a>
+        </div>
+        </div>
+
+        <div class="card-body" *ngIf="!init">
+          <div *ngIf="step=='order'">
+            <h5>Review your order</h5>
+            <p class="card-text">
+              Thank you for shopping at Amadeus, this is a summary of your purchase.
+            </p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card card-order">
+                  <div class="card-body">
+                    <h5 class="card-title title">Passenger info</h5>
+                    <div class="row">
+                      <div class="col">
+                        <label >First name</label>
+                        <div>{{order.passenger.firstName}}</div>
+                      </div>
+                      <div class="col">
+                        <label >Last name</label>
+                        <div>{{order.passenger.lastName}}</div>
+                      </div>
+                      <div class="col">
+                        <label >Birhtday</label>
+                        <div>{{order.passenger.birthday}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card card-order">
+                  <div class="card-body">
+                    <h5 class="card-title title">Flight info</h5>
+                    <div class="row">
+                      <div class="col">
+                        <label >Origin-Destination</label>
+                        <div>{{order.flight.origin}} - {{order.flight.destination}}</div>
+                      </div>
+                      <div class="col">
+                        <label >Departure date</label>
+                        <div>{{order.flight.departureDate}}</div>
+                      </div>
+                      <div class="col">
+                        <label >Price</label>
+                        <div>$ {{order.flight.price}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card ">
+                  <div class="card-body">
+                    <h5 class="card-title title">Payment info</h5>
+                    <div class="row">
+                      <div class="col">
+                        <label >First name</label>
+                        <div>Javier</div>
+                      </div>
+                      <div class="col">
+                        <label >Last name</label>
+                        <div>Perez</div>
+                      </div>
+                      <div class="col">
+                        <label >Birhtday</label>
+                        <div>07/10/1988</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="step=='passenger'">
+            <div class="row">
+              <div class="col">
+                <app-passenger-add (addPassengerChild)="addPassenger($event)"></app-passenger-add>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="step=='flight'">
+            <div class="row">
+              <div class="col">
+                <app-flight-add (addFlightChild)="addFlight($event)"></app-flight-add>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
