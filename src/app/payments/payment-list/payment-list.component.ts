@@ -14,7 +14,7 @@ import { Payment } from '../payment.model';
 })
 export class PaymentListComponent implements OnInit {
   payments$: Observable<Payment[]>;
-  @Output() getPaymentsChild = new EventEmitter<any>()
+  @Output() getPaymentsChild = new EventEmitter<any>();
 
   constructor(private store: Store<fromPayment.AppState>) {}
 
@@ -27,8 +27,7 @@ export class PaymentListComponent implements OnInit {
   }
 
   deletePayment(payment: Payment) {
-    console.log(payment)
-    if (confirm('Are You Sure You want to Delete the User?')) {
+    if (confirm('Are you sure you want to delete this payment method?')) {
       this.store.dispatch(new paymentActions.DeletePayment(payment.id));
     }
   }
