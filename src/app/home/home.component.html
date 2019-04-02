@@ -1,16 +1,16 @@
-
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-12">
       <div class="card wrapper">
         <div class="jumbotron vertical-center" *ngIf="init">
-        <div class="card-body" >
-          <h3 class="card-title">Welcome to Amadeus system</h3>
-          <p class="card-text">
-            You can start the sale of a ticket by pressing continue or navigate through the menu to manage each module.
-          </p>
-          <a href="#" class="btn btn-primary" (click)="continue()">Continue</a>
-        </div>
+          <div class="card-body">
+            <h3 class="card-title">Welcome to Amadeus system</h3>
+            <p class="card-text">
+              You can start the sale of a ticket by pressing continue or navigate through the menu to manage each
+              module.
+            </p>
+            <a href="#" class="btn btn-primary" (click)="continue()">Continue</a>
+          </div>
         </div>
 
         <div class="card-body" *ngIf="!init">
@@ -26,16 +26,16 @@
                     <h5 class="card-title title">Passenger info</h5>
                     <div class="row">
                       <div class="col">
-                        <label >First name</label>
-                        <div>{{order.passenger.firstName}}</div>
+                        <label>First name</label>
+                        <div>{{order.passenger?.firstName}}</div>
                       </div>
                       <div class="col">
-                        <label >Last name</label>
-                        <div>{{order.passenger.lastName}}</div>
+                        <label>Last name</label>
+                        <div>{{order.passenger?.lastName}}</div>
                       </div>
                       <div class="col">
-                        <label >Birhtday</label>
-                        <div>{{order.passenger.birthday}}</div>
+                        <label>Birhtday</label>
+                        <div>{{order.passenger?.birthday}}</div>
                       </div>
                     </div>
                   </div>
@@ -49,16 +49,16 @@
                     <h5 class="card-title title">Flight info</h5>
                     <div class="row">
                       <div class="col">
-                        <label >Origin-Destination</label>
-                        <div>{{order.flight.origin}} - {{order.flight.destination}}</div>
+                        <label>Origin-Destination</label>
+                        <div>{{order.flight?.origin}} - {{order.flight?.destination}}</div>
                       </div>
                       <div class="col">
-                        <label >Departure date</label>
-                        <div>{{order.flight.departureDate}}</div>
+                        <label>Departure date</label>
+                        <div>{{order.flight?.departureDate}}</div>
                       </div>
                       <div class="col">
-                        <label >Price</label>
-                        <div>$ {{order.flight.price}}</div>
+                        <label>Price</label>
+                        <div>$ {{order.flight?.price}}</div>
                       </div>
                     </div>
                   </div>
@@ -72,18 +72,20 @@
                     <h5 class="card-title title">Payment info</h5>
                     <div class="row">
                       <div class="col">
-                        <label >First name</label>
-                        <div>Javier</div>
+                        <label>Cardholder</label>
+                        <div>{{order.payment?.cardHolder}}</div>
                       </div>
                       <div class="col">
-                        <label >Last name</label>
-                        <div>Perez</div>
+                        <label>Last 4 digits</label>
+                        <div>****-****-**** {{order.payment?.cardNumber}}</div>
                       </div>
                       <div class="col">
-                        <label >Birhtday</label>
-                        <div>07/10/1988</div>
+                        <label>Expiration date</label>
+                        <div>{{order.payment?.expDate}}</div>
                       </div>
                     </div>
+                    <div class="row"></div>
+                    <a href="#" class="btn btn-primary" (click)="continue()">Continue</a>
                   </div>
                 </div>
               </div>
@@ -93,6 +95,13 @@
             <div class="row">
               <div class="col">
                 <app-passenger-add (addPassengerChild)="addPassenger($event)"></app-passenger-add>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="step=='payment'">
+            <div class="row">
+              <div class="col">
+                <app-payment-add (addPaymentChild)="addPayment($event)"></app-payment-add>
               </div>
             </div>
           </div>

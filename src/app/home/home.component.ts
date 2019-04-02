@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Passenger} from '../passengers/passenger.model';
 import {Flight} from '../flights/flight.model';
+import {Payment} from '../payments/payment.model';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,9 @@ export class HomeComponent implements OnInit {
   init: boolean;
   step: string;
   order: any = {};
-  @Output() addPassengerChild = new EventEmitter<Passenger>()
-  @Output() addFlightChild = new EventEmitter<Flight>()
+  @Output() addPassengerChild = new EventEmitter<Passenger>();
+  @Output() addFlightChild = new EventEmitter<Flight>();
+  @Output() addPaymentChild = new EventEmitter<Payment>();
 
   constructor() {
 
@@ -20,19 +22,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.init = true;
-
   }
 
   addPassenger(currentPassenger: Passenger) {
-    console.log(currentPassenger)
     this.order.passenger = currentPassenger;
     this.step = 'flight';
     console.log(this.order);
   }
 
   addFlight(currentFlight: Flight) {
-    console.log(currentFlight)
-    this.order.flight = currentFlight
+    this.order.flight = currentFlight;
+    this.step = 'payment';
+    console.log(this.order);
+  }
+  addPayment(currentPayment: Flight) {
+    console.log(currentPayment);
+    this.order.payment = currentPayment;
     this.step = 'order';
     console.log(this.order);
   }
