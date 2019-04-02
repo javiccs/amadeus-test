@@ -13,7 +13,7 @@ import { Passenger } from '../passenger.model';
 export class PassengerAddComponent implements OnInit {
   passengerForm: FormGroup;
   submitted = false;
-  @Output() childData = new EventEmitter<Passenger>()
+  @Output() addPassengerChild = new EventEmitter<Passenger>()
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<fromPassenger.AppState>
@@ -46,7 +46,7 @@ export class PassengerAddComponent implements OnInit {
     };
 
     this.store.dispatch(new passengerActions.CreatePassenger(newPassenger));
-    this.childData.emit(newPassenger)
+    this.addPassengerChild.emit(newPassenger)
     this.passengerForm.reset();
   }
 }
