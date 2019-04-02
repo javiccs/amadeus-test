@@ -1,3 +1,33 @@
-<p>
-  payment-add works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col ">
+      <h5>Add payment</h5>
+      <form [formGroup]="paymentForm" (ngSubmit)="createPayment()">
+        <div class="form-group">
+          <label>Cardholder</label>
+          <input type="text" formControlName="cardHolder" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardHolder.errors }" />
+          <div *ngIf="submitted && f.cardHolder.errors" class="invalid-feedback">
+            <div *ngIf="f.cardHolder.errors.required">Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Card number</label>
+          <input type="text" formControlName="cardNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardNumber.errors }" />
+          <div *ngIf="submitted && f.cardNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.cardNumber.errors.required">Card number is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Epiration date </label>
+          <input type="date" formControlName="expDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.expDate.errors }" />
+          <div *ngIf="submitted && f.expDate .errors" class="invalid-feedback">
+            <div *ngIf="f.expDate.errors.required">expiration date is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">Add payment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

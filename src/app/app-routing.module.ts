@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {FlightsModule} from './flights/flights.module';
 import {PassengersModule} from './passengers/passengers.module';
+import {PaymentsModule} from './payments/payments.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
   ,
   {
     path: 'payments',
-    loadChildren: () => FlightsModule
+    loadChildren: () => PaymentsModule
   }
 ];
 

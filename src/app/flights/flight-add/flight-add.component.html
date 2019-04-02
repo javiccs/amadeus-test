@@ -21,7 +21,7 @@
           <label>Departure date </label>
           <input type="date" formControlName="departureDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.departureDate.errors }" />
           <div *ngIf="submitted && f.departureDate .errors" class="invalid-feedback">
-            <div *ngIf="f.departureDate.errors.required">Departure Date is required</div>
+            <div *ngIf="f.departureDate.errors.required">Departure date is required</div>
           </div>
         </div>
         <div class="form-group">
