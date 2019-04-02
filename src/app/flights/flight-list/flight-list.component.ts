@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -14,13 +14,16 @@ import { Flight } from '../flight.model';
 })
 export class FlightListComponent implements OnInit {
   flights$: Observable<Flight[]>;
-  error$: Observable<string>;
+  @Output() getFlightsChild = new EventEmitter<any>()
 
   constructor(private store: Store<fromFlight.AppState>) {}
 
   ngOnInit() {
     this.store.dispatch(new flightActions.LoadFlights());
     this.flights$ = this.store.pipe(select(fromFlight.getFlights));
+    this.flights$.subscribe(res => {
+      this.getFlightsChild.emit(res);
+    });
   }
 
   deleteFlight(flight: Flight) {

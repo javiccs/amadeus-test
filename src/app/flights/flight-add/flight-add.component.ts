@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import * as flightActions from '../state/flight.actions';
@@ -13,6 +13,7 @@ import { Flight } from '../flight.model';
 export class FlightAddComponent implements OnInit {
   flightForm: FormGroup;
   submitted = false;
+  @Output() addFlightChild = new EventEmitter<Flight>()
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<fromFlight.AppState>
@@ -47,7 +48,7 @@ export class FlightAddComponent implements OnInit {
     };
 
     this.store.dispatch(new flightActions.CreateFlight(newFlight));
-
+    this.addFlightChild.emit(newFlight)
     this.flightForm.reset();
   }
 }
