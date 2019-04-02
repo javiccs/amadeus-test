@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {StoreModule} from '@ngrx/store';
@@ -11,13 +11,15 @@ import { EffectsModule } from '@ngrx/effects';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {PassengersModule} from './passengers/passengers.module';
 import {FlightsModule} from './flights/flights.module';
-
+import {PaymentsModule} from './payments/payments.module';
+import { ToStringPipe } from './to-string.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ToStringPipe
   ],
   imports: [
     BrowserModule,
@@ -29,8 +31,8 @@ import {FlightsModule} from './flights/flights.module';
     FormsModule,
     ReactiveFormsModule,
     PassengersModule,
-    FlightsModule
-
+    FlightsModule,
+    PaymentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
