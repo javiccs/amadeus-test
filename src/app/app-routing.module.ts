@@ -16,6 +16,11 @@ const appRoutes: Routes = [
     path: 'flights',
     loadChildren: () => FlightsModule
   }
+  ,
+  {
+    path: 'payments',
+    loadChildren: () => FlightsModule
+  }
 ];
 
 @NgModule({

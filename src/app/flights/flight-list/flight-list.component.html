@@ -4,7 +4,7 @@
   <tr class='table-primary'>
     <th scope='col'>Origin</th>
     <th scope='col'>Destination</th>
-    <th scope='col'>DepartureDate</th>
+    <th scope='col'>Departure Date</th>
     <th scope='col'>Price</th>
     <th></th>
   </tr>
@@ -15,7 +15,7 @@
     <td>{{flight.origin}}</td>
     <td>{{flight.destination}}</td>
     <td>{{flight.departureDate}}</td>
-    <td>{{flight.price}}</td>
+    <td>$ {{flight.price}}</td>
     <th>
       <a (click)=deleteFlight(flight)>delete</a>
     </th>

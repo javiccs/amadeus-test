@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Passenger} from '../passengers/passenger.model';
-import {Flight} from '../flight/flight.model';
+import {Flight} from '../flights/flight.model';
 
 @Component({
   selector: 'app-home',
