@@ -1,26 +1,29 @@
 # AmadeusTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+This app was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0. and json-server version 0.14.2 to simulate our API.
+This app is a test for Amadeus Company.
+
+# API
+This API has 3 endpoints
+
+1 - /passengers <br />
+2 - /flights <br /> 3 - /payments 
+
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Test app
+To run this application , please execute the following commands:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1 - To set app up `npm install`<br />
+2 - To run the app `npm run start`
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Further information
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+If you have any questions you can send me an email to gperez10@hotmail.com
 
 ## Further help
 
